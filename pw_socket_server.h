@@ -6,9 +6,7 @@ namespace pwutils
     class SocketServer
     {
     public:
-        class Listener
-        {
-        };
+        
     };
 
   
