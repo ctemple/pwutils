@@ -1,0 +1,8 @@
+PROJECT(testrtti)
+
+INCLUDE_DIRECTORIES(../../src)
+AUX_SOURCE_DIRECTORY(./ SRC)
+
+ADD_EXECUTABLE(testrtti ${SRC})
+ADD_DEPENDENCIES(testrtti pwutils)
+TARGET_LINK_LIBRARIES(testrtti pwutils)

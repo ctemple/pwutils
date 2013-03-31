@@ -85,7 +85,7 @@ namespace pwutils
 		}
 	public:
 		virtual int GetParentNum() const = 0;
-		virtual const Class* GetParentAt(int i) const = 0;
+		virtual const Class* GetParent(int i) const = 0;
 		virtual Object* CreateObject() const = 0;
 	protected:
 		char* m_name;
@@ -120,7 +120,7 @@ namespace pwutils
 		{ 
 			return m_parents_count;
 		}
-		virtual const Class* GetParentAt(int i) const
+		virtual const Class* GetParent(int i) const
 		{
 			return m_parents[i];
 		}
@@ -147,7 +147,7 @@ namespace pwutils
 			return 0;
 		}
 
-		virtual const Class* GetParentAt(int i) const
+		virtual const Class* GetParent(int i) const
 		{
 			return 0;
 		}
@@ -179,7 +179,7 @@ namespace pwutils
 			return this->IsKindOf(this->GetClass(),T::_GetClass());
 		}
 
-		template<class T> T* QueryObject()
+		template<class T> T* Cast()
 		{
 			if(IsKindOf<T>())
 #ifdef PW_VIRTUAL_OBJECT
@@ -207,7 +207,7 @@ namespace pwutils
 			int count = sub->GetParentNum();
 			for(int i = 0; i < count; ++i)
 			{
-				const Class* b = sub->GetParentAt(i);
+				const Class* b = sub->GetParent(i);
 				if(b == base)
 					return true;
 				if(IsKindOf(b,base))

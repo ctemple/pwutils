@@ -1,0 +1,7 @@
+PROJECT(pwutils)
+
+INCLUDE_DIRECTORIES(../src)
+
+AUX_SOURCE_DIRECTORY(../src SRC)
+
+ADD_LIBRARY(pwutils STATIC ${SRC})

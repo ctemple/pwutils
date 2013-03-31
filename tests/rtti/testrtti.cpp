@@ -26,17 +26,17 @@ class C1 : public S1
 	RTTI(C1,S1);
 };
 
-int _tmain(int argc, char* argv[])
+int main(int argc, char* argv[])
 {
 	Object* o = new Object();
 	S1* s = new S1();
 	const Class* c1 = s->GetClass();
 
-	S1* s2 = c1->CreateObject()->QueryObject<S1>();
+	S1* s2 = c1->CreateObject()->Cast<S1>();
 
-	s->QueryObject<Object>();
- 	s->QueryObject<B1>();
- 	s->QueryObject<C1>();
+	s->Cast<Object>();
+ 	s->Cast<B1>();
+ 	s->Cast<C1>();
 	
 	c1 = o->GetClass();
 	B1* b = new B1();
