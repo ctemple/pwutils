@@ -32,7 +32,7 @@ int main(int argc, char* argv[])
 	S1* s = new S1();
 	const Class* c1 = s->GetClass();
 
-	S1* s2 = c1->CreateObject()->Cast<S1>();
+	S1* s2 = c1->CreateInstance()->Cast<S1>();
 
 	s->Cast<Object>();
  	s->Cast<B1>();
@@ -48,7 +48,7 @@ int main(int argc, char* argv[])
 	g_objClassMap.add<B2>();
 	g_objClassMap.add<S1>();
 	g_objClassMap.add<C1>();
-//	B1* bb = (B1*)g_objClassMap.get<B1>()->CreateObject();
+	B1* bb = (B1*)g_objClassMap.get<B1>()->CreateInstance();
 
 	return 0;
 }

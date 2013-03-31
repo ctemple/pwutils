@@ -86,7 +86,7 @@ namespace pwutils
 	public:
 		virtual int GetParentNum() const = 0;
 		virtual const Class* GetParent(int i) const = 0;
-		virtual Object* CreateObject() const = 0;
+		virtual Object* CreateInstance() const = 0;
 	protected:
 		char* m_name;
 		int   m_level;
@@ -125,7 +125,7 @@ namespace pwutils
 			return m_parents[i];
 		}
 
-		virtual Object* CreateObject() const
+		virtual Object* CreateInstance() const
 		{
 			return new T();
 		}
@@ -152,7 +152,7 @@ namespace pwutils
 			return 0;
 		}
 
-		virtual Object* CreateObject() const
+		virtual Object* CreateInstance() const
 		{
 			return new T();
 		}
