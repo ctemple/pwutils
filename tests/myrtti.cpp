@@ -48,7 +48,7 @@ int _tmain(int argc, char* argv[])
 	g_objClassMap.add<B2>();
 	g_objClassMap.add<S1>();
 	g_objClassMap.add<C1>();
-	B1* bb = (B1*)g_objClassMap.get<B1>()->CreateObject();
+//	B1* bb = (B1*)g_objClassMap.get<B1>()->CreateObject();
 
 	return 0;
 }
